@@ -1,0 +1,71 @@
+.container_profil{
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+}
+.custom_avatar{
+    margin: 4rem auto 2rem;
+    border-radius: 75px;
+}
+.line_profil{
+    margin: 1.5rem auto 0.5rem;
+    width: 520px;
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: space-between;
+}
+.text_profil{
+    font-size: 1.5rem;
+    text-align: center;
+}
+.link{
+    text-align: center;
+    text-decoration: none;
+    color: $link-dark;
+    margin-bottom: 2rem;
+}
+.link:hover{
+    mix-blend-mode: difference;
+}
+.container_order{
+    display: flex;
+    justify-content: center;
+}
+.container_logout{
+    display: flex;
+    justify-content: center;
+}
+.order{
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 3rem;
+    margin-bottom: 2rem;
+    background-color: $link-dark;
+    color: $background-main-login-dark;
+    transition: 0.2s;
+}
+.order:hover{
+    background-color: $background-dark;
+    color: $link-dark;
+    box-shadow: 0 0 15px $link-dark;
+    transition: 0.2s;
+}
+.logout{
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 3rem;
+    margin-bottom: 2rem;
+    background-color: $logout;
+    color: $background-main-login-dark;
+    transition: 0.2s;
+}
+.logout:hover{
+    background-color: $background-dark;
+    color: $logout;
+    box-shadow: 0 0 15px $logout;
+    transition: 0.2s;
+}
