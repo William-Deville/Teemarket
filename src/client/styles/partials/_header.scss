@@ -1,0 +1,39 @@
+header {
+    background-color:#0d1117;
+    width: 100%;  
+}
+
+.header-main-nav {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header-logo {
+    width: 20%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.ul-icons {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+    list-style: none;
+    
+}
+
+.header-searchbar {
+    width: 60%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    background: greenyellow;
+}
+
+.search-text {
+    background: none;
+    border: none;
+}

@@ -1,0 +1,67 @@
+{
+  "name": "@becode/mwenbwa",
+  "version": "0.0.1",
+  "description": "A web-based game of conquests… and trees",
+  "author": "leny <leny@becode.org>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "npx eslint --fix --cache --ignore-pattern 'docs/*' src",
+    "build:server": "npx babel src/server -s --out-dir bin/server",
+    "work:server": "npx babel src/server -s --watch --verbose --out-dir bin/server",
+    "build:client": "npx webpack --progress --profile --colors",
+    "work:client": "npx webpack --env=dev --progress --watch",
+    "build": "npm run build:server && npm run build:client",
+    "sass": "sass --watch src/client/styles/style.scss:src/client/styles/style.css"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npx eslint --fix --cache"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/eslint-parser": "^7.15.8",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-proposal-decorators": "^7.15.8",
+    "@babel/plugin-proposal-object-rest-spread": "^7.15.6",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "@becode/eslint-config": "^0.12.1",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.0",
+    "eslint": "^8.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-unicorn": "^37.0.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
+    "prettier": "^2.4.1",
+    "style-loader": "^3.3.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^5.60.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
+    "@mui/material": "^5.0.6",
+    "express": "^4.17.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass": "^1.43.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged"
+    }
+  }
+}
