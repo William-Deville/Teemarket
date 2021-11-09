@@ -8,12 +8,14 @@ header {
     justify-content: space-around;
     flex-direction: row;
     align-items: center;
+    height: 60px;
 }
 
 .header-logo {
     width: 20%;
     display: flex;
     justify-content: flex-start;
+    padding-left: 15px;
 }
 
 .ul-icons {
@@ -28,12 +30,15 @@ header {
 .header-searchbar {
     width: 60%;
     border-radius: 5px;
+    border: 1px solid aliceblue;
     display: flex;
     justify-content: center;
-    background: greenyellow;
+    background: #0d1117;
+    height: 40px;
 }
 
 .search-text {
     background: none;
     border: none;
+    width: 100%;
 }
