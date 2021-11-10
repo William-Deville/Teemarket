@@ -13,7 +13,7 @@
     "work:client": "npx webpack --env=dev --progress --watch",
     "build": "npm run build:server && npm run build:client",
     "sass": "sass --watch src/client/styles/style.scss:src/client/styles/style.css",
-    "start": "nodemon ./src/server/server"
+    "start": "nodemon ./src/server/server.js"
   },
   "lint-staged": {
     "*.js": [
