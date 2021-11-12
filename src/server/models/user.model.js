@@ -16,6 +16,7 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: true,
             validate: [isEmail],
+            unique: true,
             lowercase: true,
             trim: true,
         },
@@ -33,6 +34,18 @@ const userSchema = new mongoose.Schema(
         timestamps: true,
     }
 )
+
+userSchema.statics.login = async function(email, password) {
+    const user = await this.findOne({ email });
+    if(user) {
+        const auth = await bcrypt.compare(password, user.password);
+        if(auth) {
+            return user;
+        }
+        throw Error('incorrect password');
+    }
+    throw Error('incorrect email');
+}
 
 //play function before save into display: 'block'
 userSchema.pre("save", async function(next) {
