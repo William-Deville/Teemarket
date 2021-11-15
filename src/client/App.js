@@ -1,9 +1,15 @@
 import * as React from "react";
+import Cart from "./components/Cart";
+import Login from "./components/Login";
 import Profil from "./components/Profil";
 
 const App = () => {
     return (
-        <Profil />
+        <div>
+            <Cart/>
+           
+            
+        </div>
     );
 };
 
