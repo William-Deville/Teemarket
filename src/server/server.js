@@ -1,10 +1,12 @@
 const express = require("express");
 const cookieParser = require('cookie-parser');
 const userRoutes = require('./routes/user.routes');
+const posterRoutes = require('./routes/poster.routes');
 const path = require("path");
 const app = express();
 const {APP_PORT} = process.env;
 const {checkUser, requireAuth} = require('./middleware/auth.middleware');
+const { use } = require("./routes/user.routes");
 require('./config/db');
 app.use(express.static(path.resolve(__dirname, "../../bin/client")));
 
@@ -22,6 +24,7 @@ app.get('/jwtid', requireAuth, (req, res) => {
 
 //routes
 app.use('/api/user', userRoutes);
+app.use('/api/poster', posterRoutes);
 
 //server
 app.listen(APP_PORT, () =>
