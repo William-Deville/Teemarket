@@ -6,9 +6,9 @@ const path = require("path");
 const app = express();
 const {APP_PORT} = process.env;
 const {checkUser, requireAuth} = require('./middleware/auth.middleware');
-const { use } = require("./routes/user.routes");
 require('./config/db');
 app.use(express.static(path.resolve(__dirname, "../../bin/client")));
+app.use('/uploads', express.static('uploads'));
 
 app.use(cookieParser());
 
@@ -20,7 +20,6 @@ app.get('*', checkUser);
 app.get('/jwtid', requireAuth, (req, res) => {
     res.status(200).send(res.locals.user._id);
 });
-
 
 //routes
 app.use('/api/user', userRoutes);

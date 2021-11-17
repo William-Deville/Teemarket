@@ -1,5 +1,5 @@
 const PosterModel = require('../models/poster.model');
-const UserModel = require('../models/user.model');
+const uploadErrors = require('../utils/errors.utils');
 const ObjectId = require('mongoose').Types.ObjectId;
 
 module.exports.readPoster = (req, res) => {
@@ -9,11 +9,10 @@ module.exports.readPoster = (req, res) => {
     })
 }
 
-module.exports.createPoster = async (req, res) => {
+module.exports.createPoster = async (req, res, next) => {
     const newPoster = new PosterModel({
-        //picture: req.body.picture,
-        description: req.body.description,
-        price: req.body.price
+        picture: req.file.path,
+        name: req.body.name,
     });
 
     try {
@@ -29,9 +28,8 @@ module.exports.updatePoster = (req, res) => {
         return res.status(400).send('ID unknow : ' + req.params.id);
 
     const updatedRecord = {
-        //image: req.body.image,
-        description: req.body.description,
-        price: req.body.price
+        picture: req.body.picture,
+        name: req.body.name,
     }
 
     PosterModel.findByIdAndUpdate(

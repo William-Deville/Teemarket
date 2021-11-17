@@ -233,4 +233,35 @@ button {
   transition: 0.2s;
 }
 
+.display_img {
+  width: 250px;
+  height: 350px;
+  background-color: transparent;
+  border: whitesmoke 2px solid;
+  margin: auto;
+}
+
+.button_admin {
+  margin: 1rem 0 3rem 0;
+  width: 520px;
+  height: 48px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: #58a7ff;
+  color: #292b2ecc;
+  transition: 0.2s;
+}
+
+.button_admin:hover {
+  color: #58a7ff;
+  background-color: #0d1117;
+  transition: 0.2s;
+}
+
+.img_admin {
+  width: 100%;
+  height: 100%;
+}
+
 /*# sourceMappingURL=style.css.map */

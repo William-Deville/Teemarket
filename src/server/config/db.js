@@ -2,12 +2,10 @@ const mongoose = require("mongoose");
 const {DB_USER_PASS} = process.env;
 
 mongoose
-    .connect(`mongodb+srv://Araghonne:NothingWrong@datplate.tgyz6.mongodb.net/Datplate`,
+    .connect(`mongodb+srv://${DB_USER_PASS}@datplate.tgyz6.mongodb.net/Datplate`,
         {
             useNewUrlParser: true,
-            useUnifiedTopology: true,
-            //useCreateIndex: true,          //!!!!!!!!!
-            //useFindAndModify: false,       //!!!!!!!!!
+            useUnifiedTopology: true
         }
     )
     .then(() => console.log("Connected to MongoDB"))

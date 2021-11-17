@@ -2,17 +2,13 @@ const mongoose = require('mongoose');
 
 const PosterSchema = new mongoose.Schema(
     {
-        /*picture: {
+        picture: {
             type: String,
-            required: true,
-        },*/
-        description: {
-            type: String,
-            trim: true,
-            maxlength: 250
+            required: true
         },
-        price: {
-            type: String
+        name: {
+            type: String,
+            required: true
         }
     },
     {
