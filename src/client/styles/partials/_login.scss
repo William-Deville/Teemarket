@@ -1,0 +1,77 @@
+.container_login{
+    max-width: 1000px;
+    margin: auto;
+    background-color: $background-main-login-dark;
+    border: 1px solid $black;
+    box-shadow: 0 0 35px $box-shadow
+}
+.container_login_title{
+    text-align: center;
+}
+.container_login_main{
+    width: 500px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.input_login{
+    width: 500px;
+    font-size: 1.5rem;
+    padding: 10px 10px;
+    margin-bottom: 1rem;
+    background-color: $background-title-dark;
+    border-radius: 25px;
+}
+.forgot{
+    color: $link-dark;
+    text-decoration: none;
+}
+.forgot:hover{
+    mix-blend-mode: difference;
+}
+button{
+    cursor: pointer;
+    color: $color-dark;
+}
+.login{
+    background-color: $background-title-dark;
+    border-bottom: 1px solid $black;
+    padding: 2rem 0;
+}
+.subTitle_login{
+    padding: 0.5rem 0;
+}
+.subTitle_login:first-child{
+    margin-top: 3.5rem;
+}
+.button_input{
+    display: flex;
+    justify-content: center;
+}
+.button_login{
+    margin: 3rem 0 1rem 0;
+    width: 520px;
+    height: 48px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: $link-dark;
+    color: $background-main-login-dark;
+    transition: 0.2s;
+}
+.button_login:hover{
+    color: $link-dark;
+    background-color: $background-dark;
+    transition: 0.2s;
+}
+.create{
+    color: $link-dark;
+    text-decoration: none;
+}
+.create:hover{
+    mix-blend-mode: difference;
+}
+.create_login{
+    margin-bottom: 3rem;
+    text-align: center;
+}
