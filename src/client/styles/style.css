@@ -305,4 +305,67 @@ button {
   background-color: wheat;
 }
 
+.container_list {
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 1000px;
+  margin: auto;
+  background-color: #292b2ecc;
+}
+
+.container_wishlist {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+.box_img {
+  width: 30%;
+}
+
+.img_wishlist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 225px;
+  width: 150px;
+  border: 1px solid grey;
+  margin: 1rem auto;
+}
+
+.box_name {
+  display: flex;
+  width: 60%;
+  margin: auto 0;
+}
+
+.name_wishlist {
+  font-size: 2rem;
+  margin: auto;
+  justify-content: center;
+}
+
+.box_trash {
+  width: 10%;
+  margin: auto 0;
+}
+
+.icon_trash {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+hr {
+  margin: 0 auto;
+  width: 900px;
+  height: 1px;
+  background-color: #0d1117;
+}
+
+.empty_wl {
+  margin: 7rem 0;
+}
+
 /*# sourceMappingURL=style.css.map */

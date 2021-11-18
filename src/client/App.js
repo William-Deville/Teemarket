@@ -3,12 +3,13 @@ import Cart from "./components/Cart";
 import Login from "./components/Login";
 import Profil from "./components/Profil";
 import Register from "./components/Register";
+import Wishlist from "./components/Wishlist";
 
 const App = () => {
 
     const [page, setPage] = React.useState("Cart")
     
-    if(page === "Cart") {
+    /*if(page === "Cart") {
         return (
             <div>
                 <Cart/>
@@ -32,11 +33,11 @@ const App = () => {
                 <Register/>
             </div>
         )
-    }
+    }*/
 
     return (
         <div>
-            <Login/>
+            <Wishlist/>
            
             
         </div>
