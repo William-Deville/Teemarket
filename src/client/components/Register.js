@@ -1,7 +1,12 @@
 import * as React from "react";
 
 
+
+
 export default function Register({setPage}){
+
+
+    
     return(
         <div className="container_login">
             <div className="container_login_title">
@@ -14,9 +19,9 @@ export default function Register({setPage}){
                     <h2 className="subTitle_login">E-mail</h2>
                     <input className="input_login" type="text" placeholder="johndoe@example.com" />
                     <h2 className="subTitle_login">Password</h2>
-                    <input className="input_login" type="password" placeholder="Password" />
+                    <input className="input_login" type="password" name="password" placeholder="Password" />
                     <h2 className="subTitle_login">Confirm Password</h2>
-                    <input className="input_login" type="password" placeholder="Password" />
+                    <input className="input_login" type="password" name="confpassword" placeholder="Password" />
                     <div className="button_input">
                         <button type="button" className="button_login">REGISTER</button>
                     </div>
