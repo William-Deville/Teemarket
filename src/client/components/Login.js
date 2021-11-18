@@ -11,7 +11,7 @@ export default function Login({setPage}){
                     <h2 className="subTitle_login">E-mail</h2>
                     <input className="input_login" type="text" placeholder="johndoe@example.com" />
                     <h2 className="subTitle_login">Password</h2>
-                    <input className="input_login" type="text" placeholder="Password" />
+                    <input className="input_login" type="password" placeholder="Password" />
                     <div>
                         <a href="#" className="forgot">Forgot my password</a>
                     </div>
