@@ -26,7 +26,7 @@ export default function Header({setPage}) {
                 </div>
 
                 <div class="ul-icons">
-                    <a href="#"><i className="svg">{Heart}</i>Liked</a>
+                    <btn onClick = {()=> setPage("Wishlist")}><i className="svg">{Heart}</i>Liked</btn>
                     <btn onClick = {()=> setPage("Cart")}><i className="svg">{CartPlus}</i>Cart</btn>
                     <btn onClick = {()=> setPage("Login")}><i className="svg">{User}</i>Sign in</btn>
                 </div>
