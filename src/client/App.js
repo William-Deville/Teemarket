@@ -4,18 +4,17 @@ import Login from "./components/Login";
 import Profil from "./components/Profil";
 import Register from "./components/Register";
 import Header from "./components/Header";
+import Homepage from "./components/Homepage";
 
 const App = () => {
 
-    const [page, setPage] = React.useState("Cart")
+    const [page, setPage] = React.useState("Homepage")
     
     if(page === "Cart") {
         return (
             <div>
                 <Header setPage={setPage}/>
                 <Cart setPage={setPage}/>
-                <btn onClick = {()=> setPage("Login")}> Login</btn>
-                <btn onClick = {()=> setPage("Register")}>Register</btn>
             </div>
         )
     }
@@ -34,6 +33,15 @@ const App = () => {
             <div>
                 <Header setPage={setPage}/>
                 <Register setPage={setPage}/>
+            </div>
+        )
+    }
+
+    if (page === "Homepage") {
+        return(
+            <div>
+                <Header setPage={setPage}/>
+                <Homepage setPage={setPage}/>
             </div>
         )
     }

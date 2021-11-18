@@ -1,5 +1,6 @@
 import * as React from "react";
 
+
 export default function Register({setPage}){
     return(
         <div className="container_login">

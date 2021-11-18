@@ -19,7 +19,7 @@ export default function Login({setPage}){
                         <button type="button" className="button_login">LOGIN</button>
                     </div>
                     <div className="create_login">
-                        <btn onClick = {()=> setPage("Register")}>I haven't account</btn>
+                        <btn onClick = {()=> setPage("Register")}>I haven't an account</btn>
                     </div>
                 </div>
             </div>

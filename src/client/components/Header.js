@@ -18,7 +18,7 @@ export default function Header({setPage}) {
         <header>
             <nav class="header-main-nav">
                 <div class="header-logo">
-                    <a href="#">DATPLATE</a>
+                    <btn onClick = {()=> setPage("Homepage")}>DATPLATE</btn>
                 </div>
 
                 <div class="header-searchbar">
