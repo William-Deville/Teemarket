@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export default function Login(){
+export default function Login({setPage}){
     return(
         <div className="container_login">
             <div className="container_login_title">
@@ -11,7 +11,7 @@ export default function Login(){
                     <h2 className="subTitle_login">E-mail</h2>
                     <input className="input_login" type="text" placeholder="johndoe@example.com" />
                     <h2 className="subTitle_login">Password</h2>
-                    <input className="input_login" type="text" placeholder="Password" />
+                    <input className="input_login" type="password" placeholder="Password" />
                     <div>
                         <a href="#" className="forgot">Forgot my password</a>
                     </div>
@@ -19,7 +19,7 @@ export default function Login(){
                         <button type="button" className="button_login">LOGIN</button>
                     </div>
                     <div className="create_login">
-                        <a href="#" className="create">I haven't account</a>
+                        <btn onClick = {()=> setPage("Register")}>I haven't an account</btn>
                     </div>
                 </div>
             </div>

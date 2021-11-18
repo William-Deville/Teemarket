@@ -4,17 +4,19 @@ import Login from "./components/Login";
 import Profil from "./components/Profil";
 import Register from "./components/Register";
 import Wishlist from "./components/Wishlist";
+import Header from "./components/Header";
+import Homepage from "./components/Homepage";
 
 const App = () => {
 
-    const [page, setPage] = React.useState("Cart")
+    const [page, setPage] = React.useState("Homepage")
     
-    /*if(page === "Cart") {
+    if(page === "Cart") {
+
         return (
             <div>
-                <Cart/>
-                <btn onClick = {()=> setPage("Login")}> Login</btn>
-                <btn onClick = {()=> setPage("Register")}>Register</btn>
+                <Header setPage={setPage}/>
+                <Cart setPage={setPage}/>
             </div>
         )
     }
@@ -22,7 +24,8 @@ const App = () => {
     if (page === "Login") {
         return (
             <div>
-                <Login/>
+                <Header setPage={setPage}/>
+                <Login setPage={setPage}/>
             </div>
         )
     }
@@ -30,18 +33,31 @@ const App = () => {
     if (page === "Register") {
         return (
             <div>
-                <Register/>
+                <Header setPage={setPage}/>
+                <Register setPage={setPage}/>
             </div>
         )
-    }*/
+    }
 
-    return (
-        <div>
-            <Wishlist/>
-           
-            
-        </div>
-    );
+    if (page === "Wishlist") {
+        return (
+            <div>
+                <Header setPage={setPage}/>
+                <Wishlist setPage={setPage}/>
+            </div>
+        )
+    }
+        
+    
+
+    if (page === "Homepage") {
+        return(
+            <div>
+                <Header setPage={setPage}/>
+                <Homepage setPage={setPage}/>
+            </div>
+        )
+    }
 };
 
 export default App;
