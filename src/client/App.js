@@ -24,7 +24,7 @@ const App = () => {
         return (
             <div>
                 <Header setPage={setPage}/>
-                <Login/>
+                <Login setPage={setPage}/>
             </div>
         )
     }
@@ -33,7 +33,7 @@ const App = () => {
         return (
             <div>
                 <Header setPage={setPage}/>
-                <Register/>
+                <Register setPage={setPage}/>
             </div>
         )
     }
