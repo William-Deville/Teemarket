@@ -1,5 +1,7 @@
 _dev
 
+./config/.env
+
 # Logs
 logs
 *.log
