@@ -15,5 +15,8 @@ router.get('/', posterController.readPoster);
 router.post('/', upload.single('file'), posterController.createPoster);
 router.patch('/:id', posterController.updatePoster);
 router.delete('/:id', posterController.deletePoster);
+router.post('/upload', posterController.upload);
+
 
 module.exports = router;
+

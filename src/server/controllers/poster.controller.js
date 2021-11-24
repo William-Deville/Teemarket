@@ -23,6 +23,7 @@ module.exports.createPoster = async (req, res, next) => {
     }
 };
 
+
 module.exports.updatePoster = (req, res) => {
     if(!ObjectId.isValid(req.params.id))
         return res.status(400).send('ID unknow : ' + req.params.id);
@@ -54,4 +55,13 @@ module.exports.deletePoster = (req, res) => {
                 else console.log("Delete error : " + err);
             }
             )
+}
+
+module.exports.upload = (req, res) => {
+    try {
+        console.log(req.files)
+        res.json('test upload')
+    } catch (err) {
+        res.status(500).json({msg: err.message})
+    }
 }

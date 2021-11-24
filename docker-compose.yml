@@ -1,34 +1,43 @@
 ---
-  version: "3"
-  services:
-    node:
-      image: "becodeorg/node"
-      environment:
-        NODE_ENV: "development"
-        APP_PORT: 12345
-        DB_USER_PASS: "Araghonne:NothingWrong"
-        TOKEN_SECRET: "MIIBOgIBAAJBAK1AgcPii8doNfbP6GeuUoTON/dye00onYyFI9EUP4GgV9ISPyFt+QidhZyRkBv1/uJ/00u2O7TcH1afu7NAroECAwEAAQJAQ/9/btxptBgIphgvxRG8PXeaq7n4/u2j+FUBG7xwuHUK6UP0hDGGXp3ycCmpWA3B4c+U7acBY34pm5f8Wa/74QIhANbwuKi68QsC2gbnHS7IAKch1/Gtjf/x7xsYW5LfXYlVAiEAzlkXNL6HLOGsJ9d4tFrqCYywVWnjDX82iQNPr2PCIH0CIQC1ocQZ6aeJq4Y8sQ6rGp3anjHSa9wEPhjVJ7cynQh45QIgUt04EnhItF9T0RQYZuTzgy46SbKh+XOSpObtgxNei8kCIDmU2oF3QQTtLrmZ9ImGJC3DSHiqrdQT1nAE+LaqSgnO"
-      volumes:
-        - "./package.json:/src/app/package.json"
-        - "./node_modules:/src/app/node_modules"
-        - "./bin:/src/app/bin"
-      expose:
-        - "12345"
-        - "9229"
-      ports:
-        - "80:12345"
-        - "9229"
-      command: "nodemon --inspect=0.0.0.0:9229 --watch bin/server bin/server/server.js"
-    mongo:
-      image: "mongo"
-      restart: "always"
-      ports:
-        - "27017:27017"
-      volumes:
-        - "mongo_db:/data/db"
-        - "./_dev:/usr/dump"
-      environment:
-        MONGO_INITDB_ROOT_USERNAME: "dev"
-        MONGO_INITDB_ROOT_PASSWORD: "dev"
-  volumes:
-    mongo_db:
+version: "3"
+services:
+  node:
+    image: "becodeorg/node"
+    environment:
+      NODE_ENV: "development"
+      APP_PORT: 12345
+      DB_USER_PASS: "Araghonne:NothingWrong"
+      TOKEN_SECRET: "MIIBOgIBAAJBAK1AgcPii8doNfbP6GeuUoTON/dye00onYyFI9EUP4GgV9ISPyFt\
+        +QidhZyRkBv1/uJ/00u2O7TcH1afu7NAroECAwEAAQJAQ/9/btxptBgIphgvxRG8PXeaq7n\
+        4/u2j+FUBG7xwuHUK6UP0hDGGXp3ycCmpWA3B4c+U7acBY34pm5f8Wa/74QIhANbwuKi68Q\
+        sC2gbnHS7IAKch1/Gtjf/x7xsYW5LfXYlVAiEAzlkXNL6HLOGsJ9d4tFrqCYywVWnjDX82i\
+        QNPr2PCIH0CIQC1ocQZ6aeJq4Y8sQ6rGp3anjHSa9wEPhjVJ7cynQh45QIgUt04EnhItF9T\
+        0RQYZuTzgy46SbKh+XOSpObtgxNei8kCIDmU2oF3QQTtLrmZ9ImGJC3DSHiqrdQT1nAE+La\
+        qSgnO"
+      CLOUD_NAME: "dv9akylp8"
+      CLOUD_API: "357256325781176"
+      CLOUD_API_SECRET: "xzCZNnd6fcAu-sfuGh5PtLiR3Ew"
+    volumes:
+      - "./package.json:/src/app/package.json"
+      - "./node_modules:/src/app/node_modules"
+      - "./bin:/src/app/bin"
+    expose:
+      - "12345"
+      - "9229"
+    ports:
+      - "80:12345"
+      - "9229"
+    command: "nodemon --inspect=0.0.0.0:9229 --watch bin/server bin/server/server.js"
+  mongo:
+    image: "mongo"
+    restart: "always"
+    ports:
+      - "27017:27017"
+    volumes:
+      - "mongo_db:/data/db"
+      - "./_dev:/usr/dump"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "dev"
+      MONGO_INITDB_ROOT_PASSWORD: "dev"
+volumes:
+  mongo_db: null

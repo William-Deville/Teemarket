@@ -7,6 +7,7 @@ import Wishlist from "./components/Wishlist";
 import Header from "./components/Header";
 import Homepage from "./components/Homepage";
 
+
 const App = () => {
 
     const [page, setPage] = React.useState("Homepage")
@@ -58,6 +59,8 @@ const App = () => {
             </div>
         )
     }
+
+    
 };
 
 export default App;
