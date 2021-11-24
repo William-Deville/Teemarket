@@ -57,6 +57,7 @@
     "@mui/material": "^5.0.6",
     "base-64": "^1.0.0",
     "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
     "dotenv": "^10.0.0",
