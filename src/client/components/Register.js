@@ -1,15 +1,17 @@
 import React,{useEffect, useState} from "react";
 import axios from "axios";
-import SignUpErrors from "../../server/utils/errors.utils"
+
 
 
 
 export default function Register({setPage}){
+ 
 
     const [user, setUser] = useState({
         pseudo:"",
         email:"",
-        password:""
+        password:"",
+        confpassword:""
     })
 
     const handleChange = e =>{
@@ -20,22 +22,30 @@ export default function Register({setPage}){
     }
 
     const register = () => {
-        const {pseudo, email, password} = user
-        if (pseudo && email && password){
-            axios.post("http://localhost/api/user/register", user)
-            .then((res) => {console.log(res.data.errors)
-            if(res.data.errors.pseudo !== ''){
-                alert(res.data.errors.pseudo)
-            } if (res.data.errors.email !== ''){
-                alert(res.data.errors.email)
-            } if (pseudo  = undefined){
-                console.log(ok);
-            } 
-        })
-        } else {
-            alert ("invalid input")
-        };
+        const {pseudo, email, password, confpassword} = user
+        if (password === confpassword) {
+
+            if (pseudo && email && password, confpassword){
+                axios.post("http://localhost/api/user/register", user)
+                .then((res) => {console.log(res.data.errors)
+
+
+                    
+                if(res.data.errors.pseudo !== ''){
+                    alert(res.data.errors.pseudo)
+                } if (res.data.errors.email !== ''){
+                    alert(res.data.errors.email)
+                } if (pseudo  = undefined){
+                    console.log(ok);
+                } else {
+                    alert("Password doesn't match")
+                }
+            })
+        } 
+    } else {
+        alert("Password doesn't match")
     }
+}
 
         
 
@@ -53,9 +63,9 @@ export default function Register({setPage}){
                     <h2 className="subTitle_login">E-mail</h2>
                     <input className="input_login" type="text" placeholder="johndoe@example.com" name="email" value={user.email} onChange={handleChange}/>
                     <h2 className="subTitle_login">Password</h2>
-                    <input className="input_login" type="password" name="password" placeholder="Password" name="password" value={user.password} onChange={handleChange} />
+                    <input className="input_login" type="password" placeholder="Password" name="password" value={user.password} onChange={handleChange} />
                     <h2 className="subTitle_login">Confirm Password</h2>
-                    <input className="input_login" type="password" name="confpassword" placeholder="Password" />
+                    <input className="input_login" type="password" name="confpassword" value={user.confpassword} onChange={handleChange} placeholder="Password" />
                     <div className="button_input">
                         <button type="button" className="button_login" onClick={register}>REGISTER</button>
                     </div>
@@ -68,4 +78,3 @@ export default function Register({setPage}){
         </div>
     )
 }
-
