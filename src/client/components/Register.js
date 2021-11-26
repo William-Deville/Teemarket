@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from "react";
 import axios from "axios";
-
+import SignUpErrors from "../../server/utils/errors.utils"
 
 
 
@@ -19,14 +19,22 @@ export default function Register({setPage}){
         })
     }
 
-    const register = (err) => {
+    const register = () => {
         const {pseudo, email, password} = user
         if (pseudo && email && password){
-            axios.post("http://localhost/api/user/register", user).then(res=>console.log(res))
-        }else {
+            axios.post("http://localhost/api/user/register", user)
+            .then((res) => {console.log(res.data.errors)
+            if(res.data.errors.pseudo !== ''){
+                alert(res.data.errors.pseudo)
+            } if (res.data.errors.email !== ''){
+                alert(res.data.errors.email)
+            } if (pseudo  = undefined){
+                console.log(ok);
+            } 
+        })
+        } else {
             alert ("invalid input")
         };
-        console.log(err.data.errors);
     }
 
         
@@ -38,7 +46,6 @@ export default function Register({setPage}){
                 <h1 className="login">REGISTER</h1>
             </div>
             <div className="container_login_main">
-
                 <form method="POST">
                 <div className="container_login_input">
                     <h2 className="subTitle_login">Nickname</h2>
