@@ -10,6 +10,7 @@ import Homepage from "./components/Homepage";
 const App = () => {
 
     const [page, setPage] = React.useState("Homepage")
+    // const [data, setData] = React.useState("Homepage")
     
     if(page === "Cart") {
 
