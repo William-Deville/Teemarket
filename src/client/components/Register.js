@@ -26,26 +26,23 @@ export default function Register({setPage}){
         if (password === confpassword) {
 
             if (pseudo && email && password, confpassword){
-                axios.post("http://localhost/api/user/register", user)
-                .then((res) => {console.log(res.data.errors)
-
-
+                axios.post('http://localhost/api/user/register', user)
+                .then((res) => {
                     
-                if(res.data.errors.pseudo !== ''){
-                    alert(res.data.errors.pseudo)
-                } if (res.data.errors.email !== ''){
-                    alert(res.data.errors.email)
-                } if (pseudo  = undefined){
-                    console.log(ok);
-                } else {
-                    alert("Password doesn't match")
-                }
-            })
-        } 
-    } else {
-        alert("Password doesn't match")
+                    if (res.data.errors == undefined){
+                        alert("Enregistré");
+                        setPage("Login")
+                    } if(res.data.errors.pseudo !== undefined){
+                        throw alert(res.data.errors.pseudo)
+                    } if (res.data.errors.email !== undefined){
+                        throw alert(res.data.errors.email)
+                    }
+                })
+            } 
+        } else {
+            alert("Password doesn't match")
+        }
     }
-}
 
         
 
