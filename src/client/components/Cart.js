@@ -15,9 +15,6 @@ export default function Cart() {
     case "M":
       price = 29;
       break;
-    case "S":
-      price = 19;
-      break;
     case "L":
       price = 39;
       break;
@@ -79,7 +76,7 @@ export default function Cart() {
               <option value="6">6</option>
               <option value="7">7</option>
               <option value="8">8</option>
-              <option value="9+">9+</option>
+              <option value="9">9</option>
             </select>
           </div>
           <div>
@@ -96,8 +93,7 @@ export default function Cart() {
                 setItemSize(selectedSize);
               }}
             >
-              <option value="S">S</option>
-              <option value="">M</option>
+              <option value="M">M</option>
               <option value="L">L</option>
               <option value="XL">XL</option>
             </select>
